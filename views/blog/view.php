@@ -17,13 +17,11 @@ $this->title = $model->title;
 
     <div class="comments">
         <?= \yii\widgets\ListView::widget([
-            'dataProvider' => new ActiveDataProvider([
-                'query' => $model->comments,
+            'dataProvider' => new \yii\data\ActiveDataProvider([
+                'query' => \app\models\BlogComents::find()->where(['idpost' => $model->id]),
             ]),
             'itemView' => '_comment',
-            'viewParams' => [
-                'fullView' => false,
-            ],
+            'emptyText' => 'Ещё нет коментариев'
         ]);?>
     </div>
 

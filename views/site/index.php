@@ -36,9 +36,19 @@ $this->title = 'a-potap';
             <div class="col-sm-6">
                 <h2>Свежачок</h2>
 
-                <p>
-                    Тут будут новости
-                </p>
+                <div class="news">
+                    <?= \yii\widgets\ListView::widget([
+                        'dataProvider' => new \yii\data\ActiveDataProvider([
+                            'query' => \app\models\News::find()->orderBy(['id' => SORT_DESC]),
+                            'pagination' => [
+                                'pageSize' => 7
+                            ],
+                        ]),
+                        'layout' =>  "{items}",
+                        'itemView' => '_news',
+                        'emptyText' => 'Ещё нет новостей'
+                    ]);?>
+                </div>
             </div>
         </div>
     </div>

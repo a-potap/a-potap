@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "blog".
  *
@@ -49,5 +47,10 @@ class Blog extends \yii\db\ActiveRecord
             'text' => 'Text',
             'title' => 'Title',
         ];
+    }
+
+    public function getComments()
+    {
+        return $this->hasMany(BlogComents::className(), ['idpost' => 'id']);
     }
 }
