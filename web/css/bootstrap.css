@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (https://getbootstrap.com/docs/3.3/customize/?id=1fe0d9733bb56de54ceda2a12862cd7a)
- * Config saved to config.json and https://gist.github.com/1fe0d9733bb56de54ceda2a12862cd7a
+ * Generated using the Bootstrap Customizer (<none>)
+ * Config saved to config.json and <none>
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -1088,7 +1088,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #cccccc;
@@ -1270,15 +1270,15 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 23px;
 }
 h4,
 .h4 {
@@ -4962,19 +4962,19 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #ffffff;
   background-color: #1a1a1a;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+  color: #ffffff;
 }
 .jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
+  margin-bottom: 5px;
+  font-size: 17px;
   font-weight: 200;
 }
 .jumbotron > hr {
@@ -4991,17 +4991,17 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .jumbotron h1,
   .jumbotron .h1 {
-    font-size: 63px;
+    font-size: 31px;
   }
 }
 .thumbnail {
@@ -5996,7 +5996,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6114,7 +6114,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;

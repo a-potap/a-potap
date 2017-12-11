@@ -6,11 +6,18 @@ $this->title = 'a-potap';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
+    <div class="jumbotron text-right">
         <h1>Потапов Алексей Федорович!</h1>
 
         <p class="lead">
             Добро пожаловать на мой сайт, рад тебя здесь видеть.
+        </p>
+
+        <p>
+            <br>
+            <br>
+            <br>
+            <a href="">Предел совершенства, только наше представление об этом пределе.</a>
         </p>
     </div>
 
