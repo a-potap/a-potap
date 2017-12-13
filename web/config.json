@@ -163,13 +163,13 @@
     "@navbar-default-toggle-icon-bar-bg": "#888",
     "@navbar-default-toggle-border-color": "#ddd",
     "@navbar-inverse-color": "lighten(@gray-light, 15%)",
-    "@navbar-inverse-bg": "#222",
-    "@navbar-inverse-border": "darken(@navbar-inverse-bg, 10%)",
-    "@navbar-inverse-link-color": "lighten(@gray-light, 15%)",
-    "@navbar-inverse-link-hover-color": "#fff",
-    "@navbar-inverse-link-hover-bg": "transparent",
+    "@navbar-inverse-bg": "transparent",
+    "@navbar-inverse-border": "transparent",
+    "@navbar-inverse-link-color": "#fff",
+    "@navbar-inverse-link-hover-color": "#777",
+    "@navbar-inverse-link-hover-bg": "#fff",
     "@navbar-inverse-link-active-color": "@navbar-inverse-link-hover-color",
-    "@navbar-inverse-link-active-bg": "darken(@navbar-inverse-bg, 10%)",
+    "@navbar-inverse-link-active-bg": "#fff",
     "@navbar-inverse-link-disabled-color": "#444",
     "@navbar-inverse-link-disabled-bg": "transparent",
     "@navbar-inverse-brand-color": "@navbar-inverse-link-color",
@@ -428,5 +428,5 @@
     "tab.js",
     "transition.js"
   ],
-  "customizerUrl": "<none>"
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=35b3a63dd965e61f7ad1c92b31b8f883"
 }

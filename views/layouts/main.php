@@ -27,39 +27,48 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Photo', 'url' => ['/photo/index']],
-            ['label' => 'Video', 'url' => ['/site/video']],
-            ['label' => 'Music', 'url' => ['/site/music']],
-            ['label' => 'Blog', 'url' => ['/blog']],
-            ['label' => 'Resume', 'url' => ['/site/resume']],
-        ],
-    ]);
-    NavBar::end();
-    ?>
-
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+        <div class="row header">
+            <div class="col-sm-4 hidden-xs">
+                <a href="/"> <img src="/img/logo.jpg"></a>
+            </div>
+            <div class="col-sm-8 menu">
+                <div class="row">
+                    <?
+                    NavBar::begin([
+                        'brandLabel' => 'POTAPOV',
+                        //'brandUrl' => Yii::$app->homeUrl,
+                        'options' => [
+                            'class' => 'navbar-inverse',
+                        ],
+                        'innerContainerOptions' => [
+                            'class' => 'container-fluid',
+                        ]
+
+                    ]);
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav navbar-right'],
+                        'items' => [
+                            ['label' => 'Photo', 'url' => ['/photo/index']],
+                            ['label' => 'Video', 'url' => ['/site/video']],
+                            ['label' => 'Music', 'url' => ['/site/music']],
+                            ['label' => 'Blog', 'url' => ['/blog']],
+                            ['label' => 'Resume', 'url' => ['/site/resume']],
+                        ],
+                    ]);
+                    NavBar::end();
+                    ?>
+
+                </div>
+            </div>
+        </div>
         <?= $content ?>
     </div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; a-potap <?= date('Y') ?></p>
+        <p class="pull-right">&copy; a-potap <?= date('Y') ?></p>
    </div>
 </footer>
 
