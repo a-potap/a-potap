@@ -4,11 +4,9 @@
 /* @var $content string */
 
 use app\assets\AppAsset;
-use app\widgets\Alert;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
 
 AppAsset::register($this);
 ?>
@@ -52,7 +50,7 @@ AppAsset::register($this);
                             ['label' => 'Photo', 'url' => ['/photo/index']],
                             ['label' => 'Video', 'url' => ['/site/video']],
                             ['label' => 'Music', 'url' => ['/site/music']],
-                            ['label' => 'Blog', 'url' => ['/blog']],
+                            ['label' => 'Blog', 'url' => ['/blog'], 'active' => Yii::$app->controller->id == 'blog'],
                             ['label' => 'Resume', 'url' => ['/site/resume']],
                         ],
                     ]);

@@ -1,12 +1,8 @@
 <?php
 
-use yii\helpers\Html;
-
 $this->title = 'Блог';
 ?>
 <div class="blog-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= \yii\widgets\ListView::widget([
         'dataProvider' => $dataProvider,
@@ -14,6 +10,7 @@ $this->title = 'Блог';
         'viewParams' => [
             'fullView' => false,
         ],
+        'layout' =>  "{items} {pager}",
     ]);?>
 
 </div>

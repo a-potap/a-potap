@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\models\Blog;
+use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -37,6 +37,14 @@ class BlogController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Blog::find(),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'date' => SORT_DESC,
+                ]
+            ],
         ]);
 
         return $this->render('index', [
