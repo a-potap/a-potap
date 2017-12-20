@@ -16,7 +16,33 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.photo{
+    margin-bottom: 10px;
+}
+
+.album_face{
+    width: 100%;
+    display: block;
+    min-height: 150px;
+    background-size: cover;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.album_face:hover{
+    text-decoration: none;
+}
+
+.album_face h3{
+
+}
+
+
 @media screen and (min-width: 768px) {
+
+    .photo{
+        height: auto;
+    }
 
     .header .menu{
         padding-top: 80px;
