@@ -47,7 +47,7 @@ AppAsset::register($this);
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav navbar-right'],
                         'items' => [
-                            ['label' => 'Photo', 'url' => ['/photo']],
+                            ['label' => 'Photo', 'url' => ['/photo'], 'active' => Yii::$app->controller->id == 'photo'],
                             ['label' => 'Video', 'url' => ['/site/video']],
                             ['label' => 'Music', 'url' => ['/site/music']],
                             ['label' => 'Blog', 'url' => ['/blog'], 'active' => Yii::$app->controller->id == 'blog'],
