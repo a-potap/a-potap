@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (https://getbootstrap.com/docs/3.3/customize/?id=35b3a63dd965e61f7ad1c92b31b8f883)
- * Config saved to config.json and https://gist.github.com/35b3a63dd965e61f7ad1c92b31b8f883
+ * Generated using the Bootstrap Customizer (https://getbootstrap.com/docs/3.3/customize/?id=1b5efdaa1ce6951ee154b1f89f1eba24)
+ * Config saved to config.json and https://gist.github.com/1b5efdaa1ce6951ee154b1f89f1eba24
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -4731,8 +4731,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   line-height: 1.42857143;
   text-decoration: none;
   color: #fff710;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: none;
+  border: 1px solid none;
   margin-left: -1px;
 }
 .pagination > li:first-child > a,
@@ -4751,9 +4751,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #c3bc00;
-  background-color: #eeeeee;
-  border-color: #dddddd;
+  color: #777777;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -4762,9 +4762,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 3;
-  color: #ffffff;
-  background-color: #fff710;
-  border-color: #fff710;
+  color: #777777;
+  background-color: #ffffff;
+  border-color: #ffffff;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4774,8 +4774,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
   color: #777777;
-  background-color: #ffffff;
-  border-color: #dddddd;
+  background-color: none;
+  border-color: none;
   cursor: not-allowed;
 }
 .pagination-lg > li > a,
@@ -4823,14 +4823,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > span {
   display: inline-block;
   padding: 5px 14px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: none;
+  border: 1px solid none;
   border-radius: 0px;
 }
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 .pager .next > a,
 .pager .next > span {
@@ -4845,7 +4845,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #777777;
-  background-color: #ffffff;
+  background-color: none;
   cursor: not-allowed;
 }
 .label {
