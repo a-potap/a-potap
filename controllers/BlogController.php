@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Blog;
+use app\models\BlogComents;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
@@ -14,9 +15,6 @@ use yii\web\NotFoundHttpException;
  */
 class BlogController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
@@ -29,10 +27,6 @@ class BlogController extends Controller
         ];
     }
 
-    /**
-     * Lists all Blog models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
@@ -52,11 +46,6 @@ class BlogController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single Blog model.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -64,11 +53,6 @@ class BlogController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new Blog model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
     public function actionCreate()
     {
         $model = new Blog();
@@ -82,12 +66,6 @@ class BlogController extends Controller
         }
     }
 
-    /**
-     * Updates an existing Blog model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -101,12 +79,6 @@ class BlogController extends Controller
         }
     }
 
-    /**
-     * Deletes an existing Blog model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -114,13 +86,25 @@ class BlogController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the Blog model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Blog the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    public function actionComment($id)
+    {
+        if (!Yii::$app->request->isAjax) {
+            throw new NotFoundHttpException('Допустимы только аякс запросы.');
+        }
+
+        $commentModel = new BlogComents();
+        $commentModel->idpost = $id;
+        if ($commentModel->load(Yii::$app->request->post()) && $commentModel->save()) {
+            return $this->renderAjax('commentSuccess', [
+                'model' => $commentModel,
+            ]);
+        }
+
+        return $this->renderAjax('commentForm', [
+            'model' => $commentModel,
+        ]);
+    }
+
     protected function findModel($id)
     {
         if (($model = Blog::findOne($id)) !== null) {

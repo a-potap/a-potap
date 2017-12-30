@@ -50,6 +50,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'post/<id:\d+>' => 'blog/view',
+                'post/comment/<id:\d+>' => 'blog/comment',
                 'photo/<id:\w+>' => 'photo/view',
                 'video' => 'site/video',
                 'resume' => 'site/resume',

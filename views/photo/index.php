@@ -10,7 +10,7 @@ $this->title = 'Мои фотоальбомы';
         <div class="col-sm-8 col-sm-offset-2">
             <a href="<?=\yii\helpers\Url::to('photo/'.$album['album'])?>"
                class="album_face"
-               style="background-image: url('<?='/albums/foto/'.$album['album'].'/fase.JPG'?>')"
+               style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0)), url('<?= '/albums/foto/' . $album['album'] . '/fase.JPG' ?>')"
             >
                 <h3>
                     <?=$album['name']?>

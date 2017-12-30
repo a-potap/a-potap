@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "blog_coments".
  *
@@ -29,9 +27,8 @@ class BlogComents extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idpost', 'iduser', 'date', 'text'], 'required'],
+            [['idpost', 'iduser', 'text'], 'required'],
             [['idpost'], 'integer'],
-            [['date'], 'safe'],
             [['text'], 'string'],
             [['iduser'], 'string', 'max' => 10],
         ];
@@ -45,9 +42,9 @@ class BlogComents extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'idpost' => 'Idpost',
-            'iduser' => 'Iduser',
+            'iduser' => 'Ник',
             'date' => 'Date',
-            'text' => 'Text',
+            'text' => 'Коментарий',
         ];
     }
 }

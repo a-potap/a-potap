@@ -1,6 +1,4 @@
 <?php
-use yii\bootstrap\Html;
-
 $this->title = 'Мои фотоальбомы - '.$album_info['name'];
 
 $this->registerJsFile(

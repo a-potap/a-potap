@@ -7,21 +7,16 @@
 
 use yii\helpers\Html;
 
-$this->title = $name;
+$this->title = 'Упс, ошибка(';
 ?>
 <div class="site-error">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= $this->title ?></h1>
 
     <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <p><b><?= nl2br(Html::encode($message)) ?></b></p>
+        <p>
+            Как всегда что то пошло не так. Но ты не огорчайся, все будет отлично, просто вернись на главную.
+        </p>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
 </div>
