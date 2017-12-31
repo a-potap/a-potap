@@ -4,7 +4,7 @@ namespace app\models;
 
 use yii\helpers\Url;
 use yii\web\Link;
-use yii\web\Linkable; // represents a link object as defined in JSON Hypermedia API Language.
+use yii\web\Linkable;
 
 /**
  * This is the model class for table "blog".

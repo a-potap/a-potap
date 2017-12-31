@@ -8,12 +8,12 @@ $this->title = 'Мои фотоальбомы';
 <? foreach ($albums as $album):?>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <a href="<?=\yii\helpers\Url::to('photo/'.$album['album'])?>"
+            <a href="<?= \yii\helpers\Url::to('photo/' . $album->folder) ?>"
                class="album_face"
-               style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0)), url('<?= '/albums/foto/' . $album['album'] . '/fase.JPG' ?>')"
+               style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0)), url('<?= $album->face ?>')"
             >
                 <h3>
-                    <?=$album['name']?>
+                    <?= $album->name ?>
                 </h3>
             </a>
          </div>

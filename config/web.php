@@ -49,9 +49,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'GET api/<controller:\w+>/<id:\d+>' => 'api/<controller>/view',
+                'GET api/default/<action:\w+>' => 'api/default/<action>',
+                'GET api/<controller:\w+>/<id:(\d+|\w+)>' => 'api/<controller>/view',
                 'GET api/<controller:\w+>/<action:\w+>' => 'api/<controller>/<action>',
-                'GET api/<controller:\w+>/<action:\w+>/<id:\d+>' => 'api/<controller>/<action>',
+                'GET api/<controller:\w+>/<action:\w+>/<id:(\d+|\w+)>' => 'api/<controller>/<action>',
 
                 'post/<id:\d+>' => 'blog/view',
                 'post/comment/<id:\d+>' => 'blog/comment',

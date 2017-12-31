@@ -2,13 +2,14 @@
 
 namespace app\modules\api\controllers;
 
-use app\models\BlogComents;
-use yii\data\ActiveDataProvider;
+use app\models\PhotoAlbume;
 use yii\rest\ActiveController;
+use yii\web\NotFoundHttpException;
 
-class PostController extends ActiveController
+
+class PhotoController extends ActiveController
 {
-    public $modelClass = 'app\models\Blog';
+    public $modelClass = 'app\models\PhotoAlbume';
 
     public function actions()
     {
@@ -18,11 +19,11 @@ class PostController extends ActiveController
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
             ],
-            'view' => [
-                'class' => 'yii\rest\ViewAction',
-                'modelClass' => $this->modelClass,
-                'checkAccess' => [$this, 'checkAccess'],
-            ],
+//            'view' => [
+//                'class' => 'yii\rest\ViewAction',
+//                'modelClass' => $this->modelClass,
+//                'checkAccess' => [$this, 'checkAccess'],
+//            ],
 //            'create' => [
 //                'class' => 'yii\rest\CreateAction',
 //                'modelClass' => $this->modelClass,
@@ -46,18 +47,15 @@ class PostController extends ActiveController
         ];
     }
 
-    public function actionComments($id)
+    public function actionView($id)
     {
-        return new ActiveDataProvider([
-            'query' => BlogComents::find()->where(['idpost' => $id]),
-            'pagination' => [
-                'pageSize' => 10,
-            ],
-            'sort' => [
-                'defaultOrder' => [
-                    'date' => SORT_DESC,
-                ]
-            ],
-        ]);
+        $album = PhotoAlbume::find()->where(['folder' => $id])->one();
+
+        if (is_null($album)) {
+            throw new NotFoundHttpException('Альбом не найден');
+        }
+
+        return $album;
     }
+
 }
