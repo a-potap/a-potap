@@ -2,6 +2,8 @@
 
 namespace app\modules\api;
 
+use yii\web\Response;
+
 /**
  * api module definition class
  */
@@ -19,7 +21,7 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        // custom initialization code goes here
+        \Yii::$app->errorHandler->errorAction = 'api/default/error';
     }
 
     public function behaviors()

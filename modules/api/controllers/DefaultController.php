@@ -2,7 +2,7 @@
 
 namespace app\modules\api\controllers;
 
-use yii\web\Controller;
+use yii\rest\Controller;
 
 /**
  * Default controller for the `api` module
@@ -15,6 +15,21 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return [
+            'version' => '0.1',
+            'urls' => [
+                'posts' => '/post'
+            ]
+        ];
+    }
+
+    public function actionError()
+    {
+        if ($error = \Yii::$app->errorHandler->exception)
+            return [
+                "message" => $error->getMessage(),
+                "code" => 0,
+                "status" => $error->statusCode,
+            ];
     }
 }

@@ -2,6 +2,10 @@
 
 namespace app\models;
 
+use yii\helpers\Url;
+use yii\web\Link;
+use yii\web\Linkable; // represents a link object as defined in JSON Hypermedia API Language.
+
 /**
  * This is the model class for table "blog".
  *
@@ -11,7 +15,7 @@ namespace app\models;
  * @property string $text
  * @property string $title
  */
-class Blog extends \yii\db\ActiveRecord
+class Blog extends \yii\db\ActiveRecord implements Linkable
 {
     /**
      * @inheritdoc
@@ -52,5 +56,31 @@ class Blog extends \yii\db\ActiveRecord
     public function getComments()
     {
         return $this->hasMany(BlogComents::className(), ['idpost' => 'id']);
+    }
+
+    public function fields()
+    {
+        return [
+            'id' => 'id',
+            'date' => 'date',
+            'title' => 'title',
+        ];
+    }
+
+    public function extraFields()
+    {
+        return [
+            'text' => 'text',
+            'comments' => 'comments'
+        ];
+    }
+
+    public function getLinks()
+    {
+        return [
+            Link::REL_SELF => Url::to(['post/view', 'id' => $this->id], true),
+            'index' => Url::to(['index'], true),
+            'comments' => Url::to(['comments', 'id' => $this->id], true),
+        ];
     }
 }
