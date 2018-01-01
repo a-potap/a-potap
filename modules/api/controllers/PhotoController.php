@@ -3,11 +3,11 @@
 namespace app\modules\api\controllers;
 
 use app\models\PhotoAlbume;
-use yii\rest\ActiveController;
+use yii\rest\Controller;
 use yii\web\NotFoundHttpException;
 
 
-class PhotoController extends ActiveController
+class PhotoController extends Controller
 {
     public $modelClass = 'app\models\PhotoAlbume';
 
@@ -15,35 +15,10 @@ class PhotoController extends ActiveController
     {
         return [
             'index' => [
-                'class' => 'yii\rest\IndexAction',
+                'class' => 'app\modules\api\actions\IndexAction',
                 'modelClass' => $this->modelClass,
-                'checkAccess' => [$this, 'checkAccess'],
+                'defaultOrder' => ['date_create' => SORT_DESC]
             ],
-//            'view' => [
-//                'class' => 'yii\rest\ViewAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//            ],
-//            'create' => [
-//                'class' => 'yii\rest\CreateAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//                'scenario' => $this->createScenario,
-//            ],
-//            'update' => [
-//                'class' => 'yii\rest\UpdateAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//                'scenario' => $this->updateScenario,
-//            ],
-//            'delete' => [
-//                'class' => 'yii\rest\DeleteAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//            ],
-//            'options' => [
-//                'class' => 'yii\rest\OptionsAction',
-//            ],
         ];
     }
 

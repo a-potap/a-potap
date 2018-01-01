@@ -41,7 +41,7 @@ $this->registerJs(
         <?= $model->date;?>
     </div>
 
-    <?= $model->text;?>
+    <?= $model->compiled_text ?>
 
     <p>
         <?

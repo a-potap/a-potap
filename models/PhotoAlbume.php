@@ -79,7 +79,7 @@ class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
     public function getLinks()
     {
         return [
-            Link::REL_SELF => Url::to(['photo/view', 'id' => $this->id], true),
+            Link::REL_SELF => Url::to(['photo/view', 'id' => $this->folder], true),
             'index' => Url::to(['index'], true),
         ];
     }

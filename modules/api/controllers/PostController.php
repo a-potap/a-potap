@@ -5,6 +5,7 @@ namespace app\modules\api\controllers;
 use app\models\BlogComents;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
+use yii\web\ForbiddenHttpException;
 
 class PostController extends ActiveController
 {
@@ -14,8 +15,9 @@ class PostController extends ActiveController
     {
         return [
             'index' => [
-                'class' => 'yii\rest\IndexAction',
+                'class' => 'app\modules\api\actions\IndexAction',
                 'modelClass' => $this->modelClass,
+                'defaultOrder' => ['date' => SORT_DESC],
                 'checkAccess' => [$this, 'checkAccess'],
             ],
             'view' => [
@@ -23,27 +25,14 @@ class PostController extends ActiveController
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
             ],
-//            'create' => [
-//                'class' => 'yii\rest\CreateAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//                'scenario' => $this->createScenario,
-//            ],
-//            'update' => [
-//                'class' => 'yii\rest\UpdateAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//                'scenario' => $this->updateScenario,
-//            ],
-//            'delete' => [
-//                'class' => 'yii\rest\DeleteAction',
-//                'modelClass' => $this->modelClass,
-//                'checkAccess' => [$this, 'checkAccess'],
-//            ],
-//            'options' => [
-//                'class' => 'yii\rest\OptionsAction',
-//            ],
         ];
+    }
+
+    public function checkAccess($action, $model = null, $params = [])
+    {
+        if ($action == 'index' && !is_null(\Yii::$app->request->get('expand'))) {
+            throw new ForbiddenHttpException('Parameter "expand" not allowed in this URL');
+        }
     }
 
     public function actionComments($id)

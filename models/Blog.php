@@ -53,6 +53,11 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
         ];
     }
 
+    public function getCompiled_text()
+    {
+        return preg_replace("/(\{\-\-picfiledir?)(.*?)(\*\*.*--}?)/u", '<img src="/filedir$2" class="img-responsive">', $this->text);
+    }
+
     public function getComments()
     {
         return $this->hasMany(BlogComents::className(), ['idpost' => 'id']);
@@ -61,24 +66,24 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
     public function fields()
     {
         return [
-            'id' => 'id',
-            'date' => 'date',
-            'title' => 'title',
+            'id',
+            'date',
+            'title',
         ];
     }
 
     public function extraFields()
     {
         return [
-            'text' => 'text',
-            'comments' => 'comments'
+            'text' => 'compiled_text',
+            'comments'
         ];
     }
 
     public function getLinks()
     {
         return [
-            Link::REL_SELF => Url::to(['post/view', 'id' => $this->id], true),
+            Link::REL_SELF => Url::to('post/view/' . $this->id . '?expand=text,comments', true),
             'index' => Url::to(['index'], true),
             'comments' => Url::to(['comments', 'id' => $this->id], true),
         ];
