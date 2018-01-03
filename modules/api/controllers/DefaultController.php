@@ -2,11 +2,22 @@
 
 namespace app\modules\api\controllers;
 
+use yii\filters\Cors;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\rest\Controller;
 
 class DefaultController extends Controller
 {
+    public function behaviors()
+    {
+        return ArrayHelper::merge([
+            [
+                'class' => Cors::className(),
+            ],
+        ], parent::behaviors());
+    }
+
     public function actionIndex()
     {
         return [

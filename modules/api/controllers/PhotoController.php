@@ -3,6 +3,8 @@
 namespace app\modules\api\controllers;
 
 use app\models\PhotoAlbume;
+use yii\filters\Cors;
+use yii\helpers\ArrayHelper;
 use yii\rest\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -10,6 +12,15 @@ use yii\web\NotFoundHttpException;
 class PhotoController extends Controller
 {
     public $modelClass = 'app\models\PhotoAlbume';
+
+    public function behaviors()
+    {
+        return ArrayHelper::merge([
+            [
+                'class' => Cors::className(),
+            ],
+        ], parent::behaviors());
+    }
 
     public function actions()
     {

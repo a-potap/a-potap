@@ -4,12 +4,23 @@ namespace app\modules\api\controllers;
 
 use app\models\BlogComents;
 use yii\data\ActiveDataProvider;
+use yii\filters\Cors;
+use yii\helpers\ArrayHelper;
 use yii\rest\ActiveController;
 use yii\web\ForbiddenHttpException;
 
 class PostController extends ActiveController
 {
     public $modelClass = 'app\models\Blog';
+
+    public function behaviors()
+    {
+        return ArrayHelper::merge([
+            [
+                'class' => Cors::className(),
+            ],
+        ], parent::behaviors());
+    }
 
     public function actions()
     {
