@@ -83,7 +83,7 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
     public function getLinks()
     {
         return [
-            Link::REL_SELF => Url::to('post/view/' . $this->id . '?expand=text,comments', true),
+            Link::REL_SELF => Url::to(['post/view/' . $this->id . '?expand=text,comments'], true),
             'index' => Url::to(['index'], true),
             'comments' => Url::to(['comments', 'id' => $this->id], true),
         ];

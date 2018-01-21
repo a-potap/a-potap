@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'a-potap';
+$this->title = 'Блог Потапова Алексея';
 ?>
 <div class="site-index">
 
