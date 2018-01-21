@@ -5,6 +5,8 @@ use yii\helpers\Html;
 
 $this->title = $model->title;
 
+$this->registerJsFile('https://vk.com/js/api/share.js?95', ['position' => \yii\web\View::POS_HEAD, 'charset' => 'windows-1251']);
+
 $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Блог Потапова Алексея. ' . $model->title,
@@ -84,4 +86,13 @@ $this->registerJs(
             'emptyText' => 'Ещё нет коментариев'
         ]);?>
     </div>
+    <div class="social_vk">
+        <script type="text/javascript">
+            <!--
+            document.write(VK.Share.button(false, {type: "round", text: "Потделиться"}));
+            -->
+        </script>
+    </div>
+
+
 </div>
