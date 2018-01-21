@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.support_blok {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
 
 @media screen and (min-width: 768px) {
 

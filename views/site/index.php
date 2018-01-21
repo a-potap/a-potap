@@ -43,7 +43,9 @@ $this->title = 'a-potap';
                 </p>
 
                 <p>
-                    Оставьте комментарий, если вам понравится какой либо рассказ, это самая лучшая мотивация для меня писать ещё.
+                    Оставьте комментарий, если вам понравится какой либо рассказ, это самая лучшая мотивация для меня
+                    писать ещё, а можно <a href="http://yasobe.ru/na/a_potap" target="_blank">сделать взнос</a> на
+                    поддержку сайта!
                 </p>
             </div>
 
@@ -63,6 +65,12 @@ $this->title = 'a-potap';
                         'emptyText' => 'Ещё нет новостей'
                     ]);?>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 support_blok">
+                <a class="btn btn-primary btn-sm" href="http://yasobe.ru/na/a_potap"><strong>Поддержать автора!</strong></a>
             </div>
         </div>
     </div>
