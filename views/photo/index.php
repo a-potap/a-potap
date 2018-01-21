@@ -1,6 +1,16 @@
 <?php
 
 $this->title = 'Мои фотоальбомы';
+
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Блог Потапова Алексея. Мои фотоальбомы из путешествий.',
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'фотоальбомы, Кипр 2014, Пафос, Лимассол, Айя-Напа, Ларнака, Кикос, Варшава, Париж, Берлин, Амстердам, Урал',
+], 'keywords');
+
 ?>
 <h1><?=$this->title?></h1>
 

@@ -3,6 +3,16 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Блог Потапова Алексея';
+
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Блог Потапова Алексея. Здесь выкладываю в основном отчеты, фотографии о своих путешествиях и некоторые мысли обо всем.',
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'Блог Потапова Алексея, путешествовать, фотографии о своих путешествиях, видео, фото',
+], 'keywords');
+
 ?>
 <div class="site-index">
 

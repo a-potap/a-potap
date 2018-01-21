@@ -1,6 +1,16 @@
 <?php
 $this->title = 'Мои фотоальбомы - ' . $album->name;
 
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Блог Потапова Алексея. ' . $this->title,
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'фотоальбомы, блог, ' . $this->title,
+], 'keywords');
+
+
 $this->registerJsFile(
     '@web/lightbox/js/lightbox.js',
     [

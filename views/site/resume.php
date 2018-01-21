@@ -1,5 +1,16 @@
 <?php
 $this->title = 'Резюме';
+
+
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Резюме Потапова Алексея. Образование, специальность, знание языков программирования и опыт работы веб программистом. А так же мои контакты',
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'Резюме Потапова Алексея. Образование, специальность, опыт работы, веб программист, Yii2, Laravel, SASS, LESS, Twitter Bootstrap, Zurb Foundation, AngularJS, React+Redux, Vie, TypeScript, Angular',
+], 'keywords');
+
 ?>
 
 <div id="content-free">

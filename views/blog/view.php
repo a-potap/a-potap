@@ -5,6 +5,15 @@ use yii\helpers\Html;
 
 $this->title = $model->title;
 
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Блог Потапова Алексея. ' . $model->title,
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'путешествия, блог, ' . $model->title,
+], 'keywords');
+
 $this->registerJs(
     "
     $('#comment_model').on('show.bs.modal', function (e) {

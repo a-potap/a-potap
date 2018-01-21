@@ -1,5 +1,16 @@
 <?php
 $this->title = 'Моя музыка';
+
+
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Блог Потапова Алексея. Моя музыка.',
+], 'description');
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'Блог Потапова Алексея, музыка',
+], 'keywords');
+
 ?>
 
 <div id="content-free">
