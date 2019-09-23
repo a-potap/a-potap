@@ -53,5 +53,5 @@ $this->registerJs(
 
     <?= $model->getCompiled_text($model->text) ?>
 
-    <?= $this->render( '_comments', ['param'=> 1] ); ?>
+    <?= $this->render( '_commentsBlock', ['model'=> $model] ); ?>
 </div>
