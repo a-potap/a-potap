@@ -3,9 +3,6 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Blog */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="comment-form">

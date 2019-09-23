@@ -2,23 +2,21 @@
 
 namespace app\models;
 
-use yii\helpers\Url;
-use yii\web\Link;
-use yii\web\Linkable;
-
 /**
  * This is the model class for table "blog".
  *
- * @property integer $id
- * @property integer $iduser
+ * @property int $id
+ * @property int $iduser
  * @property string $date
  * @property string $text
  * @property string $title
+ * @property string $text_en
+ * @property string $title_en
  */
-class Blog extends \yii\db\ActiveRecord implements Linkable
+class Blog extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -26,7 +24,7 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -34,13 +32,13 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
             [['iduser', 'date', 'text'], 'required'],
             [['iduser'], 'integer'],
             [['date'], 'safe'],
-            [['text'], 'string'],
-            [['title'], 'string', 'max' => 150],
+            [['text', 'text_en'], 'string'],
+            [['title', 'title_en'], 'string', 'max' => 150],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -50,17 +48,24 @@ class Blog extends \yii\db\ActiveRecord implements Linkable
             'date' => 'Date',
             'text' => 'Text',
             'title' => 'Title',
+            'text_en' => 'Text En',
+            'title_en' => 'Title En',
         ];
     }
 
-    public function getCompiled_text()
+
+    public function getCompiled_text($text = null)
     {
-        return preg_replace("/(\{\-\-picfiledir?)(.*?)(\*\*.*--}?)/u", '<img src="/filedir$2" class="img-responsive">', $this->text);
+
+        return preg_replace(
+            "/(\{\-\-picfiledir?)(.*?)(\*\*.*--}?)/u", '<img src="/filedir$2" class="img-responsive">',
+            is_null($text) ? $this->text : $text
+            );
     }
 
     public function getComments()
     {
-        return $this->hasMany(BlogComents::className(), ['idpost' => 'id']);
+        return $this->hasMany(BlogComents::class, ['idpost' => 'id']);
     }
 
     public function fields()

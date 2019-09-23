@@ -40,7 +40,7 @@ class IndexAction extends \yii\rest\IndexAction
         }
 
         return Yii::createObject([
-            'class' => ActiveDataProvider::className(),
+            'class' => ActiveDataProvider::class,
             'query' => $query,
             'pagination' => [
                 'params' => $requestParams,

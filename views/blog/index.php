@@ -2,7 +2,6 @@
 
 $this->title = 'Блог';
 
-
 $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Блог Потапова Алексея. Рассказы о путешествиях по европе Кипру и Уралу и не только.',
@@ -21,7 +20,7 @@ $this->registerMetaTag([
         'viewParams' => [
             'fullView' => false,
         ],
-        'layout' =>  "{items} {pager}",
+        'layout' => "{items} {pager}",
     ]);?>
 
 </div>

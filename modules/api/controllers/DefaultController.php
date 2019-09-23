@@ -13,7 +13,7 @@ class DefaultController extends Controller
     {
         return ArrayHelper::merge([
             [
-                'class' => Cors::className(),
+                'class' => Cors::class,
             ],
         ], parent::behaviors());
     }

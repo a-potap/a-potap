@@ -17,7 +17,7 @@ class PostController extends ActiveController
     {
         return ArrayHelper::merge([
             [
-                'class' => Cors::className(),
+                'class' => Cors::class,
             ],
         ], parent::behaviors());
     }

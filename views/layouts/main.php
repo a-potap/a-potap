@@ -7,6 +7,10 @@ use app\assets\AppAsset;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
+use yii\helpers\Url;
+
+$currentURL = str_replace(['ru/', 'en/'], '', Url::current());
+$isDefaultLanguage = \Yii::$app->language == 'ru-RU';
 
 AppAsset::register($this);
 ?>
@@ -50,8 +54,12 @@ AppAsset::register($this);
                 <a href="/"> <img src="/img/logo.jpg"></a>
             </div>
             <div class="col-sm-8 menu">
+                <div class="language hidden-xs">
+                    <?= Html::a('RU', [$currentURL, 'language' => 'ru'], ['class' => $isDefaultLanguage ? 'active': '']) ?>
+                    <?= Html::a('EN', [$currentURL, 'language' => 'en'], ['class' => $isDefaultLanguage ? '': 'active']) ?>
+                </div>
                 <div class="row">
-                    <?
+                    <?php
                     NavBar::begin([
                         'brandLabel' => 'POTAPOV',
                         //'brandUrl' => Yii::$app->homeUrl,

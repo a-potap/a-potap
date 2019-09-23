@@ -5,14 +5,15 @@ namespace app\models;
 /**
  * This is the model class for table "news".
  *
- * @property integer $id
+ * @property int $id
  * @property string $date
  * @property string $text
+ * @property string $text_en
  */
 class News extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -20,19 +21,20 @@ class News extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['date', 'text'], 'required'],
             [['date'], 'safe'],
+            [['text_en'], 'string'],
             [['text'], 'string', 'max' => 200],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -40,6 +42,7 @@ class News extends \yii\db\ActiveRecord
             'id' => 'ID',
             'date' => 'Date',
             'text' => 'Text',
+            'text_en' => 'Text En',
         ];
     }
 }

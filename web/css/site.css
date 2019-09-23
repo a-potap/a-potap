@@ -6,14 +6,13 @@ h1, h2, h3, h4, h5, h6{
     color: #fff;
 }
 
-
 .jumbotron{
     border: 7px solid #fff;
 }
 
 .container{
     max-width: 800px;
-
+    min-width: 320px;
 }
 
 .photo{
@@ -46,6 +45,24 @@ h1, h2, h3, h4, h5, h6{
     margin: 0 auto;
 }
 
+.header .menu .language {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.header .menu .language a{
+    color: #aaa;
+}
+
+.header .menu .language a.active {
+    font-weight: bold;
+}
+
+
+.comments, .comments-form{
+    padding-top: 15px;
+}
+
 @media screen and (min-width: 768px) {
 
     .photo{
@@ -53,7 +70,7 @@ h1, h2, h3, h4, h5, h6{
     }
 
     .header .menu{
-        padding-top: 80px;
+        padding-top: 30px;
     }
 
     .navbar-brand{

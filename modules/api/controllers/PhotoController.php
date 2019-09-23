@@ -17,7 +17,7 @@ class PhotoController extends Controller
     {
         return ArrayHelper::merge([
             [
-                'class' => Cors::className(),
+                'class' => Cors::class,
             ],
         ], parent::behaviors());
     }

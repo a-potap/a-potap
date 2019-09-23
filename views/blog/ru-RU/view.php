@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-$this->title = $model->title_en;
+$this->title = $model->title;
 
 $this->registerJsFile('https://vk.com/js/api/share.js?95', ['position' => \yii\web\View::POS_HEAD, 'charset' => 'windows-1251']);
 
@@ -51,8 +51,7 @@ $this->registerJs(
         <?= $model->date;?>
     </div>
 
-    <?= $model->getCompiled_text($model->text_en) ?>
+    <?= $model->getCompiled_text($model->text) ?>
 
-    <?= $this->render( '_commentsBlock', ['model'=> $model] ); ?>
-
+    <?= $this->render( '_comments', ['param'=> 1] ); ?>
 </div>
