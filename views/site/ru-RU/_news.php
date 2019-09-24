@@ -3,5 +3,5 @@
 
 <div>
     <span><?=$model->date?></span>
-    <p><?=$model->text_en?></p>
+    <p><?=$model->text?></p>
 </div>
