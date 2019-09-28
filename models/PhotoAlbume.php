@@ -2,27 +2,25 @@
 
 namespace app\models;
 
-use yii\helpers\Url;
-use yii\web\Link;
-use yii\web\Linkable;
-
 /**
  * This is the model class for table "photo_albume".
  *
- * @property integer $id
+ * @property int $id
  * @property string $date_create
  * @property string $name
  * @property string $description
  * @property string $folder
+ * @property string $name_en
+ * @property string $description_en
  */
-class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
+class PhotoAlbume extends \yii\db\ActiveRecord
 {
     private $basedir = 'albums/foto/';
     private $fileextentions = ['JPG', 'jpg', 'gif'];
     private $_facefile = 'fase.JPG';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -30,21 +28,19 @@ class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['date_create'], 'safe'],
-            [['name', 'folder'], 'required'],
-            [['name'], 'string', 'max' => 155],
-            [['description'], 'string', 'max' => 255],
-            [['folder'], 'string', 'max' => 45],
+            [['name', 'folder', 'name_en'], 'string', 'max' => 45],
+            [['description', 'description_en'], 'string', 'max' => 255],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -54,8 +50,11 @@ class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
             'name' => 'Name',
             'description' => 'Description',
             'folder' => 'Folder',
+            'name_en' => 'Name En',
+            'description_en' => 'Description En',
         ];
     }
+
 
     public function fields()
     {
@@ -86,7 +85,7 @@ class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
 
     public function getFace()
     {
-        return $this->basedir . $this->folder . '/' . $this->_facefile;
+        return '/' . $this->basedir . $this->folder . '/' . $this->_facefile;
     }
 
     public function getFiles()
@@ -114,5 +113,4 @@ class PhotoAlbume extends \yii\db\ActiveRecord implements Linkable
 
         return $files;
     }
-
 }

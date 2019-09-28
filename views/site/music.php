@@ -1,14 +1,13 @@
 <?php
-$this->title = 'Моя музыка';
-
+$this->title = \Yii::t('app', 'My music');
 
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Блог Потапова Алексея. Моя музыка.',
+    'content' => \Yii::t('app', 'Potapov Alexey\'s blog. My music.'),
 ], 'description');
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'Блог Потапова Алексея, музыка',
+    'content' => \Yii::t('app', 'Potapov Alexey\'s blog, music'),
 ], 'keywords');
 
 ?>

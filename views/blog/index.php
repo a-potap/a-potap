@@ -1,18 +1,21 @@
 <?php
 
-$this->title = 'Блог';
+$this->title =  \Yii::t('app', 'Blog');
 
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Блог Потапова Алексея. Рассказы о путешествиях по европе Кипру и Уралу и не только.',
+    'content' => \Yii::t('app', 'Potapov Alexey\'s blog. Stories about traveling across Europe to Cyprus and the Urals and not only.'),
 ], 'description');
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'путешествиях, Урал, Кипр, Италия, Римини, отпуск, горы',
+    'content' => \Yii::t('app', 'travel, Ural, Cyprus, Italy, Rimini, vacation, mountains'),
 ], 'keywords');
 
 ?>
 <div class="blog-index">
+    <h1>
+        <?= $this->title; ?>
+    </h1>
 
     <?= \yii\widgets\ListView::widget([
         'dataProvider' => $dataProvider,

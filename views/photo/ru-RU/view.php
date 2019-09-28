@@ -1,13 +1,13 @@
 <?php
-$this->title = 'My photos - ' . $album->name_en;
+$this->title = 'Мои фотоальбомы - ' . $album->name;
 
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Potapov Alexey\'s blog. ' . $this->title,
+    'content' => 'Блог Потапова Алексея. ' . $this->title,
 ], 'description');
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'photo albums, blog, ' . $this->title,
+    'content' => 'фотоальбомы, блог, ' . $this->title,
 ], 'keywords');
 
 
@@ -24,7 +24,7 @@ $this->registerCssFile("@web/lightbox/css/lightbox.css", [
 ]);
 
 ?>
-<h1><?= $album->name_en ?></h1>
+<h1><?= $album->name ?></h1>
 
 <div class="row">
     <div class="col-xs-12">
@@ -33,7 +33,7 @@ $this->registerCssFile("@web/lightbox/css/lightbox.css", [
         </p>
 
         <p>
-            <?= $album->description_en?>
+            <?= $album->description?>
         </p>
     </div>
     <?php foreach ($album->files as $file): ?>

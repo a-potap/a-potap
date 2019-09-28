@@ -1,6 +1,5 @@
 <?php
-$this->title = 'Video';
-
+    $this->title = 'My video';
 ?>
 
 <div id="content-free">

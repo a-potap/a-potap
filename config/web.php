@@ -74,6 +74,7 @@ $config = [
 
                 'post/<id:\d+>' => 'blog/view',
                 'post/comment/<id:\d+>' => 'blog/comment',
+                'photo' => 'photo/index',
                 'photo/<id:\w+>' => 'photo/view',
                 'video' => 'site/video',
                 'resume' => 'site/resume',
