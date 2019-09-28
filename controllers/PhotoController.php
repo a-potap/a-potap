@@ -10,7 +10,7 @@ class PhotoController extends \yii\web\Controller
     public function actionIndex()
     {
         return $this->render('index', [
-            'albums' => PhotoAlbume::find()->all()
+            'albums' => PhotoAlbume::find()->orderBy(['date_create' => SORT_DESC])->all()
         ]);
     }
 

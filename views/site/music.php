@@ -17,7 +17,6 @@ $this->registerMetaTag([
         <?= $this->title; ?>
     </h1>
 
-
     <label>africanskye gluky</label><br>
     <audio controls="controls" title="africanskye gluky">
         <source src="http://a-potap.ru/albums/mus/mytracs/africanskye gluky.mp3" />

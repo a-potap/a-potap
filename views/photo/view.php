@@ -29,7 +29,7 @@ $this->registerCssFile("@web/lightbox/css/lightbox.css", [
 <div class="row">
     <div class="col-xs-12">
         <p>
-            <?= $album->date_create?>
+            <i><?= \Yii::$app->formatter->asDate($album->date_create)?></i>
         </p>
 
         <p>

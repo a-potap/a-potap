@@ -48,7 +48,9 @@ $this->registerJs(
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div>
-        <?= $model->date;?>
+        <p>
+            <i><?= \Yii::$app->formatter->asDate($model->date)?></i>
+        </p>
     </div>
 
     <?= $model->getCompiled_text($model->text) ?>

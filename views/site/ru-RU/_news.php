@@ -2,6 +2,6 @@
 ?>
 
 <div>
-    <span><?=$model->date?></span>
+    <i><?= \Yii::$app->formatter->asDate($model->date)?></i>
     <p><?=$model->text?></p>
 </div>

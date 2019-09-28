@@ -8,11 +8,11 @@ $this->registerJsFile('https://vk.com/js/api/share.js?95', ['position' => \yii\w
 
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Блог Потапова Алексея. ' . $model->title,
+    'content' => 'Potapov Alexey\'s blog. ' . $model->title_en,
 ], 'description');
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'путешествия, блог, ' . $model->title,
+    'content' => 'travel, blog, ' . $model->title_en,
 ], 'keywords');
 
 $this->registerJs(
@@ -48,7 +48,9 @@ $this->registerJs(
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div>
-        <?= $model->date;?>
+        <p>
+            <i><?= \Yii::$app->formatter->asDate($model->date)?></i>
+        </p>
     </div>
 
     <?= $model->getCompiled_text($model->text_en) ?>

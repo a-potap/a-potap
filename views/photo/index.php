@@ -22,7 +22,7 @@ $this->registerMetaTag([
                style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0)), url('<?= $album->face ?>')"
             >
                 <h3>
-                    <?= $album->name ?>
+                    <?= $album->name_en ?>
                 </h3>
             </a>
          </div>
