@@ -1,14 +1,13 @@
 <?php
 $this->title = 'Резюме';
 
-
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Резюме Потапова Алексея. Образование, специальность, знание языков программирования и опыт работы веб программистом. А так же мои контакты',
+    'content' => 'Resume Potapov Alexey. Education, specialty, knowledge of programming languages and experience as a web programmer. And also my contacts',
 ], 'description');
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'Резюме Потапова Алексея. Образование, специальность, опыт работы, веб программист, Yii2, Laravel, SASS, LESS, Twitter Bootstrap, Zurb Foundation, AngularJS, React+Redux, Vie, TypeScript, Angular',
+    'content' => 'Resume Potapov Alexey. Education, specialty, work experience, web programmer, Yii2, Laravel, SASS, LESS, Twitter Bootstrap, Zurb Foundation, AngularJS, React + Redux, Vie, TypeScript, Angular',
 ], 'keywords');
 
 ?>
@@ -25,9 +24,6 @@ $this->registerMetaTag([
     <p>
         Kalashnikov Izhevsk State Technical University, master of Applied Mathematics,
         specialty: information systems and technologies.
-        <ul>
-
-        </ul>
     </p>
 
     <h3>Work experience:</h3>
